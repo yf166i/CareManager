@@ -1,0 +1,35 @@
+<nav class="navbar fixed-top header-background">
+    <div class="container-fluid">
+        <h2 class="navbar-brand color-white">CaseManager</h2>
+        <!-- ログインしている場合、メニューを表示 -->
+        {% if request.user.is_authenticated %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item text-center">
+                            <a href="{% url 'index' %}" class="menu-link">利用者管理</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item text-center">
+                            <a href="{% url 'caseReportIndex' %}" class="menu-link">事例記録</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item text-center">
+                            <a href="{% url 'accountUpdate' user.pk %}" class="menu-link">アカウント情報編集</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item text-center">
+                            <a href="{% url 'logout' %}" class="menu-link">ログアウト</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</nav>

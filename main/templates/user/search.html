@@ -1,0 +1,32 @@
+<table class="table table-bordered mb-5">
+    <thead style="background-color: #eee;">
+        <tr>
+            <th colspan="3" class="search-th">検索</th>
+        </tr>
+        <tr>
+            <th>利用者名</th>
+            <th>所属組織</th>
+            <th>グループ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <form method="get">
+            <tr>
+                <td>
+                    <input class="form-control" type="search" value="{{ request.GET.query }}" name="name" type="text">
+                </td>
+                <td>
+                    <input class="form-control" type="search" value="{{ request.GET.query }}" name="organization" type="text">
+                </td>
+                <td>
+                    <input class="form-control" type="search" value="{{ request.GET.query }}" name="group" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-end">
+                    <button class="btn search-btn">検索</button>
+                </td>
+            </tr>
+        </form>
+    </tbody>
+</table>

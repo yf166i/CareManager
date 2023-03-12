@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <h2 class="title mb-4">利用者新規登録</h2>
+    <form method="POST">{% csrf_token %}
+        <div class="form-group mb-4">
+            <label for="name">利用者名</label>
+            {{form.name}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="organization">所属組織名</label>
+            {{form.organization}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="group">グループ</label>
+            {{form.group}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="address">住所</label>
+            {{form.address}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="tel">電話番号(ハイフン無しで入力してください)</label>
+            {{form.tel}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="mail">メールアドレス</label>
+            {{form.mail}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="handicapName" style="margin-right: 0.5rem;">障がい名</label>
+            {{form.handicap_name}}
+        </div>
+        <div class="form-group mb-4">
+            <label for="handicapLevel" style="margin-right: 0.5rem;">障がい/医療区分</label>
+            {{form.handicap_level|add_class:'w-110'}}
+        </div>
+
+        <div class="mb-5" style="display: flex;">
+            <a href="{% url 'index' %}" class="btn btn-secondary" style="margin-right: 1rem;">戻る</a>
+            <button class="btn btn-primary" type="submit" value="create">登録</button>
+        </div>
+    </form> 
+{% endblock %}

@@ -1,0 +1,28 @@
+<table class="table mb-5">
+    <thead>
+        <th>利用者名</th>
+        <th>所属組織</th>
+        <th>グループ</th>
+        <th class="w-130"></th>
+        <th class="w-110">
+            <a href="{% url 'create' %}" class="btn btn-primary">新規登録</a>
+        </th>
+    </thead>
+    <tbody>
+        {% for item in users %}
+            <tr>
+                <td class="pt-1">{{ item.name }}</td>
+                <td class="pt-1">{{ item.organization }}</td>
+                <td class="pt-1">{{ item.group }}</td>
+                <td>
+                    <a href="{% url 'update' item.id %}" class="btn btn-success">編集・詳細</a>
+                </td>
+                <td>
+                    <form id="deleteUserForm" action="{% url 'delete' item.id %}" method="POST">{% csrf_token %}
+                        <button class="btn btn-danger deleteUser" type="submit" value="delete">削除</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

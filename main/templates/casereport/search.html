@@ -1,0 +1,21 @@
+<h2 style="font-size: 1rem;z">発生日時 期間検索</h2>
+<form method="get">
+    <div class="mb-5" style="display: flex;">
+        <input
+            class="form-control"
+            style="width: 30%; margin-right: 1rem;"
+            type="date"
+            value="{{ request.GET.query }}"
+            name="date_min"
+        >
+        <span style="margin-top: 0.5rem">〜</span>
+        <input
+            class="form-control"
+            style="width: 30%; margin-left: 1rem;"
+            type="date"
+            value="{{ request.GET.query }}"
+            name="date_max"
+        >
+        <button class="btn search-btn" style="margin-left: 2rem;">検索</button>
+    </div>
+</form>

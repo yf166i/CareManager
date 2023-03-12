@@ -1,0 +1,74 @@
+/* 共通 */
+/* テキストカラー 白色 */
+.color-white { color: #fff; }
+
+/* 横幅 */
+.w-110 { width: 110px; }
+.w-130 { width: 130px; }
+.w-250 { width: 250px; }
+
+/* padding-top */
+.pt-1 { padding-top: 1rem !important; }
+
+/* タイトル */
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* body */
+body {
+    margin-top: 100px;
+}
+
+/* header */
+/* ヘッダー背景色 */
+.header-background {
+    background-color: #3e8691;
+}
+/* メニューリンク */
+.menu-link {
+    text-decoration: none;
+    color: gray;
+}
+/* ハンバーガーメニュー */
+.navbar-toggler-icon {
+    background-image: url(
+        "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"
+    );
+}
+
+/* アカウント作成 */
+.account-form {
+    width: 50%;
+    margin: auto;
+}
+
+/* ログイン */
+.login-form {
+    width: 25%;
+    margin: auto;
+}
+
+/* 検索 */
+/* th */
+.search-th {
+    text-align: center;
+    font-size: 1rem;
+}
+/* ボタン */
+.search-btn {
+    background-color: #FFA500;
+    color: #fff;
+}
+.search-btn:hover{
+    background-color: #D2691E;
+    color: #fff;
+}
+
+/* レスポンシブ */
+@media screen and (max-width:480px) { 
+    /*　画面サイズが480pxからはここを読み込む　*/
+    .login-form { width: 50%; }
+    .account-form { width: 80%; }
+}

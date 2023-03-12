@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- 検索 -->
+    {% include "casereport/search.html" %}
+    <!-- 一覧 -->
+    {% include "casereport/list.html" %}
+    <!-- ページネーション -->
+    {% include "pagination.html" %}
+{% endblock %}

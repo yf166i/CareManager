@@ -1,0 +1,28 @@
+<table class="table mb-5">
+    <thead>
+        <th>発生日時</th>
+        <th>利用者名</th>
+        <th>事例名</th>
+        <th class="w-130"></th>
+        <th class="w-110">
+            <a href="{% url 'caseReportCreate' %}" class="btn btn-primary">新規登録</a>
+        </th>
+    </thead>
+    <tbody>
+        {% for item in casereports %}
+            <tr>
+                <td class="pt-1">{{ item.occurrence_date|date:"Y/m/d" }}</td>
+                <td class="pt-1">{{ item.name }}</td>
+                <td class="pt-1">{{ item.case_name }}</td>
+                <td>
+                    <a href="{% url 'caseReportUpdate' item.id %}" class="btn btn-success">編集・詳細</a>
+                </td>
+                <td>
+                    <form id="deleteCaseReportForm" action="{% url 'caseReportDelete' item.id %}" method="POST">{% csrf_token %}
+                        <button class="btn btn-danger deleteCasereport" type="submit" value="delete">削除</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
